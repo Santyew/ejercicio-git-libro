@@ -170,3 +170,65 @@ pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git log --graph --al
 
 ## Paso 8
 
+En este paso se cambia a la rama **bibliografia**, se crea un fichero llamado **bibliografia.txt** y se añade el texto *"Chacon, S. and Straub, B. Pro Git. Apress."*, luego se añade un git add . y un git commit -m con titulo *"Añadida primera referencia bibliográfica."* y por último se aplica un **git log --graph --all --oneline**.
+
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git checkout bibliografia
+error: Los cambios locales de los siguientes archivos serán sobrescritos por checkout:
+        README.md
+Por favor realice un commit con los cambios o un stash antes de cambiar ramas.
+Abortando
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  cat > bibliografia.txt
+ - Chacon, S. and Straub, B. Pro Git. Apress.%                                                                                                                                         
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git add .  
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Añadida primera referencia bibliográfica."
+[main f5d15a9] Añadida primera referencia bibliográfica.
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+ create mode 100644 bibliografia.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git log --graph --all --oneline
+* f5d15a9 (HEAD -> main) Añadida primera referencia bibliográfica.
+* aeebc63 Añadido capítulo 4.
+* 51d11a9 (bibliografia) Añadido el índice .
+* 7cb4bed Se crea el indice.
+* 56fd18b Añadido capitulo 3.
+* ffbc296 Añadido capitulo 2.
+* 045dd41 Añadido capitulo 1.
+* 21ba79a (origin/main, origin/HEAD) Initial commit
+```
+
+## Paso 9
+
+Fusionamos la *rama main* con la *rama bibliografia* con **git merge**, se chequea para que esté verificado y por último se borra la rama con el comando **git branch -d bibliografia** y se verifica con el comando **git log --graph --all --oneline**.
+
+```code
+ro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git checkout main
+M       README.md
+Ya en 'main'
+Tu rama está adelantada a 'origin/main' por 7 commits.
+  (usa "git push" para publicar tus commits locales)
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git merge bibliografia
+Ya está actualizado.
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git log --graph --all --oneline
+* f5d15a9 (HEAD -> main) Añadida primera referencia bibliográfica.
+* aeebc63 Añadido capítulo 4.
+* 51d11a9 (bibliografia) Añadido el índice .
+* 7cb4bed Se crea el indice.
+* 56fd18b Añadido capitulo 3.
+* ffbc296 Añadido capitulo 2.
+* 045dd41 Añadido capitulo 1.
+* 21ba79a (origin/main, origin/HEAD) Initial commit
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git branch -d bibliografia
+Eliminada la rama bibliografia (era 51d11a9).
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git log --graph --all --oneline
+* f5d15a9 (HEAD -> main) Añadida primera referencia bibliográfica.
+* aeebc63 Añadido capítulo 4.
+* 51d11a9 Añadido el índice .
+* 7cb4bed Se crea el indice.
+* 56fd18b Añadido capitulo 3.
+* ffbc296 Añadido capitulo 2.
+* 045dd41 Añadido capitulo 1.
+* 21ba79a (origin/main, origin/HEAD) Initial commit
+```
+
+## Paso 10
+
