@@ -75,3 +75,44 @@ index 9a06b52..e99af43 100644
 
 ## Paso 4
 
+Se crea el capitulo 3 y en este caso vamos a verificar el commit, y las diferencias de versiones entre la primera y la última versión
+
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ cat > capitulos/capitulo3.txt
+Git permite la creación de ramas lo que permite tener distintas versiones del mismo proyecto y trabajar de manera simultanea en ellas.^C
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git add .
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Añadido capitulo 3."
+[main 56fd18b] Añadido capitulo 3.
+ 2 files changed, 35 insertions(+), 1 deletion(-)
+ create mode 100644 capitulos/capitulo3.txt
+ ```
+
+ ### Este es el historial del primer capitulo ###
+
+ ```code
+ pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git diff 21ba79aa2e8e623c125e68eff45775b2cffe4649..HEAD  
+diff --git a/README.md b/README.md
+index 9a06b52..cefc2a8 100644
+--- a/README.md
++++ b/README.md
+```
+
+### Este es el historial del capitulo 3 ###
+
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git diff ffbc296439473acd45c69ef5c411167e3191e028..HEAD
+diff --git a/README.md b/README.md
+index e99af43..cefc2a8 100644
+--- a/README.md
++++ b/README.md
+@@ -40,4 +40,38 @@ git add
+ git add .
+ pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ 
+ ## Paso 3
+\ No newline at end of file
++## Paso 3
++Se hace lo mismo que el paso 2 pero añadiendo el capítulo 2 y poniendo el registro
+```
+## Paso 5
+
+
