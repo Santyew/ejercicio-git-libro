@@ -38,6 +38,6 @@ pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ cat > capitulos/capi
 Git es un sistema de control de versiones ideado por Linus Torvalds.
 git add
 git add .
-^C
 pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ 
 ```
+## Paso 3
