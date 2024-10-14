@@ -75,7 +75,7 @@ index 9a06b52..e99af43 100644
 
 ## Paso 4
 
-Se crea el capitulo 3 y en este caso vamos a verificar el commit, y las diferencias de versiones entre la primera y la última versión
+Se crea el capitulo 3 y en este caso vamos a verificar el **commit**, y las diferencias de versiones entre la *primera* y la *última versión*.
 
 ```code
 pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ cat > capitulos/capitulo3.txt
@@ -115,4 +115,33 @@ index e99af43..cefc2a8 100644
 ```
 ## Paso 5
 
+Se añade un texto de *indice*, se hace un **commit** previo con el nombre *"Se crea el indice."* luego se ejecuta el comando de **echo** con el siguiente mensaje *Indice de los cápitulos, con conceptos avanzados de git*, se añade un commit que diga "Añadido el índice ." y por último se hace **git annotate** para verificar quién fue el último en modificar el archivo.
 
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ cat > indice.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git add .
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Se crea el indice."
+[main 7cb4bed] Se crea el indice.
+ 2 files changed, 41 insertions(+)
+ create mode 100644 indice.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  echo "Indice de los cápitulos, con conceptos avanzados de git" >> indice.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git add .
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Añadido el índice ."
+[main 51d11a9] Añadido el índice .
+ 1 file changed, 1 insertion(+)
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git annotate indice.txt
+51d11a94        (   Santyew     2024-10-14 17:06:10 +0100       1)Indice de los cápitulos, con conceptos avanzados de git
+```
+
+## Paso 6
+
+Se crea un rama **branch** llamada *bibliografía* y luego se muestran sus ramas.
+
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git branch bibliografia
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git branch -av
+  bibliografia        51d11a9 Añadido el índice .
+* main                51d11a9 [adelante 5] Añadido el índice .
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main 21ba79a Initial commit
+```
