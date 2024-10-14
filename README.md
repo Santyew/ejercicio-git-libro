@@ -145,3 +145,28 @@ pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$  git branch -av
   remotes/origin/HEAD -> origin/main
   remotes/origin/main 21ba79a Initial commit
 ```
+
+## Paso 7 
+
+Se crea un fichero llamado capitulo 4.txt y añadimos el siguiente texto *"En este capítulo veremos cómo usar GitHub para alojar repositorios en remoto."*, ejecutamos un git add para añadir los cambios, un commit con el texto *" "Añadido capítulo 4."* y por último un git log para mostar el historial de la rama y sería este: **git log --graph --all --oneline**
+
+```code
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ cat > capitulos/capitulo4.txt
+En este capítulo veremos cómo usar GitHub para alojar repositorios en remoto.^C
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git add .  
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Añadido capítulo 4."
+[main aeebc63] Añadido capítulo 4.
+ 3 files changed, 33 insertions(+), 1 deletion(-)
+ create mode 100644 capitulos/capitulo4.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git log --graph --all --oneline
+* aeebc63 (HEAD -> main) Añadido capítulo 4.
+* 51d11a9 (bibliografia) Añadido el índice .
+* 7cb4bed Se crea el indice.
+* 56fd18b Añadido capitulo 3.
+* ffbc296 Añadido capitulo 2.
+* 045dd41 Añadido capitulo 1.
+* 21ba79a (origin/main, origin/HEAD) Initial commit
+```
+
+## Paso 8
+
