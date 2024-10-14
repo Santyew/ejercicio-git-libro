@@ -41,3 +41,37 @@ git add .
 pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ 
 ```
 ## Paso 3
+Se hace lo mismo que el paso 2 pero añadiendo el capítulo 2 y poniendo el registro
+
+```code
+cat > capitulos/capitulo2.txt
+El flujo de trabajo básico con Git consiste en:
+ 1- Hacer cambios en el repositorio.
+ 2- Añadir los cambios a la zona de intercambio temporal.
+ 3- Hacer un commit de los cambios.
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git add .
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git commit -m "Añadido capitulo 2."
+[main ffbc296] Añadido capitulo 2.
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100644 capitulos/capitulo2.txt
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git log
+commit ffbc296439473acd45c69ef5c411167e3191e028 (HEAD -> main)
+Author: Santyew <santiagoruiz5999@gmail.com>
+Date:   Mon Oct 14 16:29:11 2024 +0100
+
+    Añadido capitulo 2.
+
+commit 045dd41bcc4f7e649ed1c7d4be983dd86f198100
+Author: Santyew <santiagoruiz5999@gmail.com>
+Date:   Mon Oct 14 16:20:20 2024 +0100
+
+    Añadido capitulo 1.
+pro@jpexposito-VirtualBox:~/Documentos/ejercicio-git-libro$ git diff HEAD~2..HEAD 
+diff --git a/README.md b/README.md
+index 9a06b52..e99af43 100644
+--- a/README.md
++++ b/README.md
+```
+
+## Paso 4
+
